@@ -1,0 +1,44 @@
+server:
+  port: 8080
+logging:
+  level:
+    ru:
+      mai: DEBUG
+spring:
+  jackson:
+    default-property-inclusion: non_empty
+    parser:
+      strict-duplicate-detection: true
+app:
+  executor:
+    initialDelay: 1
+    delay: 1
+    queueCapacity: 50
+    blackAndWhite:
+      corePoolSize: 1
+      maxPoolSize: 2
+    color:
+      corePoolSize: 1
+      maxPoolSize: 2
+  time-to:
+    take-a-photo: 10
+    print:
+      paperSizeTimeToPrintMapping:
+        A7: 10
+        A6: 20
+        A5: 30
+        A4: 40
+        A3: 50
+        A2: 60
+        A1: 70
+        A0: 80
+      photoSizeTimeToPrintMapping:
+        P10X15: 10
+        P15X21: 20
+        P20X30: 30
+        P30X40: 40
+        P30X45: 50
+        P30X90: 60
+      colorTimeToPrintMultiplierMapping:
+        blackAndWhite: 1
+        inColor: 2
