@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.mai.config.TimeToPrintConfiguration;
+import ru.mai.config.property.TimeToPrintConfiguration;
 import ru.mai.model.print.PrintableInColor;
 import ru.mai.model.print.PrintablePhoto;
 import ru.mai.service.PhotoService;

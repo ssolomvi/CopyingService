@@ -1,7 +1,6 @@
 package ru.mai.service.state;
 
-import ru.mai.config.TimeToPrintConfiguration;
-import ru.mai.model.enums.Color;
+import ru.mai.config.property.TimeToPrintConfiguration;
 import ru.mai.model.print.PrintablePhoto;
 
 public abstract class PhotoPrintState extends PrintState<PrintablePhoto> {
@@ -13,7 +12,7 @@ public abstract class PhotoPrintState extends PrintState<PrintablePhoto> {
     @Override
     protected long calculatePrintProcessingTime(PrintablePhoto toPrint) {
         return timeToPrintConfiguration.getTimeToPrint(toPrint.getPhotoSize())
-                * timeToPrintConfiguration.getTimeToPrintMultiplier(Color.blackAndWhite);
+                * timeToPrintConfiguration.getTimeToPrintMultiplier(toPrint.getColor());
     }
 
 }

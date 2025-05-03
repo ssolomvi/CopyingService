@@ -1,4 +1,4 @@
-package ru.mai.config;
+package ru.mai.config.asyc;
 
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;

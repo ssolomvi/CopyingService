@@ -4,7 +4,7 @@ import jakarta.annotation.PreDestroy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
-import ru.mai.config.ExecutorConfiguration;
+import ru.mai.config.property.ExecutorConfiguration;
 import ru.mai.model.print.PrintableInColor;
 import ru.mai.service.state.PrintState;
 
@@ -52,8 +52,9 @@ public abstract class StatefulPrinter implements PrintRequestHandler {
 
     private void handleByColor(PrintableInColor request) {
         try {
+            log.debug("Adding printing request to queue of {}", getClass().getSimpleName());
             queue.add(request);
-            log.debug("There is room for {} elements in queue", queue.remainingCapacity());
+            log.trace("There is room for {} elements in queue", queue.remainingCapacity());
         } catch (IllegalStateException e) {
             log.error("Cannot add the request to the queue due to capacity restrictions");
         }
@@ -101,8 +102,6 @@ public abstract class StatefulPrinter implements PrintRequestHandler {
         PrintableInColor request;
         if ((request = queue.poll()) != null) {
             processRequest(request);
-        } else {
-            processEmptyQueue();
         }
     }
 
@@ -112,8 +111,6 @@ public abstract class StatefulPrinter implements PrintRequestHandler {
         //noinspection unchecked
         state.print(request);
     }
-
-    protected abstract void processEmptyQueue();
 
     @PreDestroy
     protected void shutdownExecutorServiceAndAwaitTermination() {

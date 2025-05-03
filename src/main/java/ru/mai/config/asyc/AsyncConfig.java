@@ -1,8 +1,9 @@
-package ru.mai.config;
+package ru.mai.config.asyc;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import ru.mai.config.property.ExecutorConfiguration;
 
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;

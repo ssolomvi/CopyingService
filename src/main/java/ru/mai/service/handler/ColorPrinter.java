@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
-import ru.mai.config.ExecutorConfiguration;
+import ru.mai.config.property.ExecutorConfiguration;
 import ru.mai.model.enums.Color;
 import ru.mai.model.print.PrintableInColor;
 
@@ -37,32 +37,12 @@ public class ColorPrinter extends StatefulPrinter {
     protected void processRequest(PrintableInColor request) {
         log.trace("Processing request: {}", request);
         super.processRequest(request);
-        log.debug("There are {} elements left in queue", queue.size());
-    }
-
-    @Override
-    protected void processEmptyQueue() {
-        log.trace("Color printer's queue is empty");
+        log.trace("There are {} elements left in queue", queue.size());
     }
 
     @Override
     public String toString() {
         return "Color printer";
     }
-
-    /*
-    @Scheduled(fixedRate = 1_000)
-    public void scheduleQueuePolling() {
-        PrintableInColor request;
-        if ((request = queue.poll()) != null) {
-            executor.execute(() -> {
-                var state = configureState(request);
-
-                //noinspection unchecked
-                state.print(request);
-            });
-        }
-    }
-     */
 
 }

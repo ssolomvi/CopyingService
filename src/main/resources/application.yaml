@@ -1,9 +1,5 @@
 server:
   port: 8080
-logging:
-  level:
-    ru:
-      mai: DEBUG
 spring:
   jackson:
     default-property-inclusion: non_empty
@@ -21,7 +17,7 @@ app:
       corePoolSize: 1
       maxPoolSize: 2
   time-to:
-    take-a-photo: 10
+    take-a-photo: 10_000
     print:
       paperSizeTimeToPrintMapping:
         A7: 10

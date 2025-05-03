@@ -2,8 +2,7 @@ package ru.mai.service.state;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.mai.config.TimeToPrintConfiguration;
-import ru.mai.model.enums.Color;
+import ru.mai.config.property.TimeToPrintConfiguration;
 import ru.mai.model.print.PrintableInColor;
 import ru.mai.model.print.PrintablePaper;
 
@@ -25,7 +24,7 @@ public class PaperPrintState extends PrintState<PrintablePaper> {
     @Override
     protected long calculatePrintProcessingTime(PrintablePaper toPrint) {
         return timeToPrintConfiguration.getTimeToPrint(toPrint.getPaperSize())
-                * timeToPrintConfiguration.getTimeToPrintMultiplier(Color.inColor);
+                * timeToPrintConfiguration.getTimeToPrintMultiplier(toPrint.getColor());
     }
 
     @Override

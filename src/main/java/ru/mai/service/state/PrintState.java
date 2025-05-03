@@ -2,12 +2,15 @@ package ru.mai.service.state;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.mai.config.TimeToPrintConfiguration;
+import ru.mai.config.property.TimeToPrintConfiguration;
 import ru.mai.model.print.PrintableInColor;
+
+import java.text.NumberFormat;
 
 public abstract class PrintState<Printable extends PrintableInColor> {
 
     private final static Logger log = LoggerFactory.getLogger(PrintState.class);
+    private static final NumberFormat nFormat = NumberFormat.getInstance();
 
     protected TimeToPrintConfiguration timeToPrintConfiguration;
 
@@ -16,8 +19,8 @@ public abstract class PrintState<Printable extends PrintableInColor> {
     }
 
     public void print(Printable request) {
-        log.debug("State: {} processing request: {}", this, request);
         var timeToProcess = calculatePrintProcessingTime(request);
+        log.info("State: {} evaluated time is: {} ms for processing request: {}", this, nFormat.format(timeToProcess), request);
 
         innerPrint(timeToProcess, request);
     }

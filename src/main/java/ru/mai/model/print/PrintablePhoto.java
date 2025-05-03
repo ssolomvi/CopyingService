@@ -21,7 +21,10 @@ public class PrintablePhoto extends PrintableWithFile {
 
     @Override
     public String toString() {
-        return String.format("\"Photo\": { \"color\": %s,\"filename\": %s,\"photoSize\": %s }", getColor(), getFilename(), getPhotoSize());
+        return String.format(
+                "\"Photo\": { \"id\": %s, \"color\": %s,\"filename\": %s,\"photoSize\": %s }",
+                getId(), getColor(), getFilename(), getPhotoSize()
+        );
     }
 
 }
