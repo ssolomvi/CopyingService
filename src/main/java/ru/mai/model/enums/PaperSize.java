@@ -2,13 +2,13 @@ package ru.mai.model.enums;
 
 public enum PaperSize {
 
-    A7,
-    A6,
-    A5,
-    A4,
-    A3,
-    A2,
+    A0,
     A1,
-    A0;
+    A2,
+    A3,
+    A4,
+    A5,
+    A6,
+    A7;
 
 }

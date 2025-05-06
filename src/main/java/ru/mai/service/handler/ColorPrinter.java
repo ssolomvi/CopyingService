@@ -30,7 +30,7 @@ public class ColorPrinter extends StatefulPrinter {
 
     @Override
     public boolean canHandle(PrintableInColor request) {
-        return Color.inColor.equals(request.getColor());
+        return Color.IN_COLOR.equals(request.getColor());
     }
 
     @Override

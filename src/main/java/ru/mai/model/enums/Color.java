@@ -1,6 +1,6 @@
 package ru.mai.model.enums;
 
 public enum Color {
-    blackAndWhite,
-    inColor
+    BLACK_AND_WHITE,
+    IN_COLOR
 }

@@ -2,11 +2,11 @@ package ru.mai.model.enums;
 
 public enum PhotoSize {
 
-    P10X15,
-    P15X21,
-    P20X30,
-    P30X40,
-    P30X45,
-    P30X90;
+    SIZE_10X15,
+    SIZE_15X21,
+    SIZE_20X30,
+    SIZE_30X40,
+    SIZE_30X45,
+    SIZE_30X90;
 
 }

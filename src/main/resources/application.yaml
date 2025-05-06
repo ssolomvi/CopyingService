@@ -29,12 +29,12 @@ app:
         A1: 70
         A0: 80
       photoSizeTimeToPrintMapping:
-        P10X15: 10
-        P15X21: 20
-        P20X30: 30
-        P30X40: 40
-        P30X45: 50
-        P30X90: 60
+        SIZE_10X15: 10
+        SIZE_15X21: 20
+        SIZE_20X30: 30
+        SIZE_30X40: 40
+        SIZE_30X45: 50
+        SIZE_30X90: 60
       colorTimeToPrintMultiplierMapping:
         blackAndWhite: 1
         inColor: 2

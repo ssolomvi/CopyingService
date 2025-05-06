@@ -28,7 +28,7 @@ public class BlackWhitePrinter extends StatefulPrinter {
 
     @Override
     public boolean canHandle(PrintableInColor request) {
-        return Color.blackAndWhite.equals(request.getColor());
+        return Color.BLACK_AND_WHITE.equals(request.getColor());
     }
 
     @Override
