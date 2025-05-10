@@ -11,7 +11,7 @@ public abstract class PrintableInColor {
     @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private UUID id = UUID.randomUUID();
 
-    @Schema(example = "blackAndWhite",
+    @Schema(example = "BLACK_AND_WHITE",
             description = "Color mode of printing")
     @NotNull
     private Color color;

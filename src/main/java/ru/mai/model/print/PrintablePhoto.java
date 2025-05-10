@@ -6,7 +6,7 @@ import ru.mai.model.enums.PhotoSize;
 
 public class PrintablePhoto extends PrintableWithFile {
 
-    @Schema(example = "P10X15",
+    @Schema(example = "SIZE_10X15",
             description = "Size of photo to print")
     @NotNull
     private PhotoSize photoSize;
